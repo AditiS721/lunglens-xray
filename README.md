@@ -25,8 +25,6 @@ flowchart TD
 - Image Processing Toolbox
 - Deep Learning Toolbox Model for MobileNet-v2 Network support package
 
-Install missing components through MATLAB’s **Add-Ons** menu.
-
 ## Dataset and Setup
 
 Download the pediatric [Chest X-Ray Images (Pneumonia) dataset](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia).
@@ -38,8 +36,6 @@ Example image path:
 ```text
 data/raw/train/NORMAL/IM-0115-0001.jpeg
 ```
-
-The script merges the original partitions and creates an approximately **70/15/15 split by inferred filename groups**, stratified by class.
 
 | Subset | NORMAL | PNEUMONIA | Total |
 |---|---:|---:|---:|
@@ -76,8 +72,6 @@ Training uses:
 - **Augmentation:** rotation, translation, and scaling; no horizontal flips
 - **Model selection:** lowest validation loss
 
-Saved models load automatically for evaluation and explanation. Reopening MATLAB does not require retraining, provided the saved model files remain available.
-
 ## Test Results
 
 **PNEUMONIA** is the positive class. Results represent one run on the internal test split.
@@ -98,8 +92,6 @@ CLAHE achieved slightly higher accuracy and specificity; no CLAHE achieved sligh
 | `results/clahe/` | CLAHE predictions, plots, heatmaps, and audits |
 | `results/noclahe/` | No-CLAHE predictions, plots, heatmaps, and audits |
 | `results/latest_explanation.png` | Most recent individual-image explanation |
-
-Dataset and model files are excluded from this repository when using the supplied `.gitignore`. Generate them locally using the setup and training commands.
 
 ## Limitations
 
